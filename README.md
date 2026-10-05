@@ -8,6 +8,14 @@ and withholds the combined score entirely when the evidence can't carry it.
 
 No API keys. No database. No accounts.
 
+- **Six hazards:** flood, wildfire, severe storms, extreme heat, drought, and air quality,
+  scored from FEMA, NOAA, USDA, Copernicus, and Open-Meteo data.
+- **Property-aware advice:** roof, foundation, and build year change which actions are
+  recommended and in what order.
+- **Long-run outlook:** 1991–2020 climate normals against 2036–2065 CMIP6 projections.
+- **Stack:** TypeScript end to end. React 19 and Vite on the client, Express 5 on the server,
+  one shared types file as the API contract, four runtime dependencies.
+
 ---
 
 ## Run it
@@ -66,7 +74,11 @@ vite/esbuild/typescript live there. Without it the build fails with `vite: not f
 
 ---
 
-## What changed from ClimateIQ, and why
+## Design decisions
+
+ClimateMark is a ground-up rewrite of my earlier project,
+[ClimateIQ](https://github.com/WHEEE31/climate-iq). These are the changes that mattered and
+the reasoning behind each.
 
 ### 1. Confidence is a first-class type
 
